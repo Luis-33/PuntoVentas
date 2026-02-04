@@ -32,7 +32,7 @@ CREATE TABLE productos (
 CREATE TABLE ventas(
     id_ventas SERIAL PRIMARY KEY,
     fecha_hora TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    total NUMERIC(10,2) NOT NULL 0,
+    total NUMERIC(10,2) NOT NULL DEFAULT 0,
     id_usuario INT NOT NULL,
     CONSTRAINT fk_usuario
         FOREIGN KEY (id_usuario)
@@ -50,7 +50,7 @@ CREATE TABLE detalle_ventas(
     CONSTRAINT fk_producto
         FOREIGN KEY (id_producto)
         REFERENCES productos(id_producto)
-        ON DELETE RESTRICT
+        ON DELETE RESTRICT,
     id_ventas INT NOT NULL,
     CONSTRAINT fk_ventas
         FOREIGN KEY (id_ventas)
