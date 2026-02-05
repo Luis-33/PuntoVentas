@@ -1,0 +1,32 @@
+1️⃣ Diseñar base de datos (modelo de ventas)
+2️⃣ Crear tablas en PostgreSQL (SQL real)
+3️⃣ Backend con Node.js (CommonJS) + Express
+    -Crear estructura de carpetas
+    -Instalar dependencias
+4️⃣ Conexión a PostgreSQL (pg)
+5️⃣ Endpoints CRUD
+6️⃣ Probar con Postman
+7️⃣ Frontend después
+
+estructura de carpetas
+backend/
+│── src/
+│   │── config/
+│   │   │── db.js
+│   │── controllers/
+│   │   │── proveedores.controller.js
+│   │   │── productos.controller.js
+│   │   │── ventas.controller.js
+│   │── routes/
+│   │   │── proveedores.routes.js
+│   │   │── productos.routes.js
+│   │   │── ventas.routes.js
+│   │── app.js
+│── index.js
+│── package.json
+│── .env
+
+instalar dependencias
+npm init -y
+npm install express pg dotenv cors
+npm install nodemon --save-dev
