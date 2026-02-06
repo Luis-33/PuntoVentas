@@ -1,3 +1,4 @@
+FLUJO DEL PROYECTO
 1️⃣ Diseñar base de datos (modelo de ventas)
 2️⃣ Crear tablas en PostgreSQL (SQL real)
 3️⃣ Backend con Node.js (CommonJS) + Express
@@ -27,6 +28,16 @@ backend/
 │── .env
 
 instalar dependencias
-npm init -y
-npm install express pg dotenv cors
+npm init -y 
+npm install express pg dotenv cors morgan 
 npm install nodemon --save-dev
+    EXPLICACION DEPENDENCIAS
+//npm init -i: para que configure el archivo package.json
+// instalacion de dependencias clave
+    Express: crea servidor http
+    pg: para la Conexión PostgreSQL
+    dotenv: para variables de entorno
+    Cors: Permite que el frontend consuma tu API
+    Morgan: Muestra en consola cada request
+    nodemon --save-dev: reinicia el servidor automaticamente
+todo se ejecuta en la carpeta backend 
