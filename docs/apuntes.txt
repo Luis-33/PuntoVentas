@@ -41,3 +41,6 @@ npm install nodemon --save-dev
     Morgan: Muestra en consola cada request
     nodemon --save-dev: reinicia el servidor automaticamente
 todo se ejecuta en la carpeta backend 
+
+COMANDO NODE
+npm.cmd run dev
