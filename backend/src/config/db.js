@@ -1,11 +1,11 @@
 import pg from 'pg';
-
+import { DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER } from './config.js'
 export const pool = new pg.Pool({
-    user:'root', 
-    host:'localhost',
-    password: 'root',
-    database: 'ventas_db',
-    port: '5432'
+    user:DB_USER, 
+    host:DB_HOST,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    port: DB_PORT
 });
 
 // pool.query('SELECT NOW()').then(result => {
