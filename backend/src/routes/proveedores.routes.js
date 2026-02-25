@@ -1,7 +1,6 @@
 import { Router } from "express";//importando el modulo Router de express
-const router = Router();//asignando una constante para utilizar Router
-import {pool} from "../config/db.js"
 import { getProv, getProvByid, deleteProv, createProv, updateProv } from "../controllers/proveedores.controller.js";
+const router = Router();//asignando una constante para utilizar Router
 //C-reate
 //R-ead
 //U-pdate
@@ -16,4 +15,4 @@ router.post('/proveedores', createProv);
 
 router.put('/proveedores/:id_proveedor', updateProv);
 
-export default router;//esportamos router como default
+export default router;//exportamos router como default
