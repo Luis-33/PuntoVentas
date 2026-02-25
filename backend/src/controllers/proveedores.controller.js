@@ -28,12 +28,22 @@ export const deleteProv = async (req, res) => {
 }
 
 export const createProv = async (req, res) => {//usando los metodos de Router (request y response)
+   try {
     const data = req.body
     const {rows} = await pool.query(
     "INSERT INTO proveedores (nombre_empresa, nombre_contacto, correo, numero_telefonico, direccion) VALUES ($1, $2, $3, $4, $5) RETURNING *",
     [data.nombre_empresa, data.nombre_contacto, data.correo, data.numero_telefonico, data.direccion]
     )
-return res.json(rows[0]);
+    return res.json(rows[0]);
+   } catch (error) {
+    console.log(error);
+    if (error?.code === "23505") {
+        return res.status(409).json({mensaje: "El correo ya existe"});
+    }
+
+    return res.status(500).json({mensaje: "Error interno"})
+    
+   }
 
 }
 
