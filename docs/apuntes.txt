@@ -73,3 +73,15 @@ backend/
 
 COMANDO NODE
 npm.cmd run dev
+
+COMANDOS PARA INSTALAR REACT
+npm.cmd create vite
+Agregar nombre del proyecto
+Seleccionar REACT
+Seleccionar JavaScript
+seguir los pasos que indica cmd 
+    posibles pasos:
+    cd "nombre de tu proyecto"
+    npm install
+    npm run dev
+    
