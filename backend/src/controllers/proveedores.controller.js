@@ -29,10 +29,10 @@ export const deleteProv = async (req, res) => {
 
 export const createProv = async (req, res) => {//usando los metodos de Router (request y response)
    try {
-    const data = req.body
+    const {nombre_empresa,nombre_contacto, correo,numero_telefonico,direccion} = req.body
     const {rows} = await pool.query(
     "INSERT INTO proveedores (nombre_empresa, nombre_contacto, correo, numero_telefonico, direccion) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-    [data.nombre_empresa, data.nombre_contacto, data.correo, data.numero_telefonico, data.direccion]
+    [nombre_empresa, nombre_contacto, correo, numero_telefonico, direccion]
     )
     return res.json(rows[0]);
    } catch (error) {
@@ -49,11 +49,14 @@ export const createProv = async (req, res) => {//usando los metodos de Router (r
 
 export const updateProv = async (req, res) => {//usando los metodos de Router (request y response)
     const {id_proveedor} = req.params;
-    const data = req.body;
+    const {nombre_empresa,nombre_contacto,correo,numero_telefonico,direccion} = req.body;
 
     const {rows} = await pool.query(
         "UPDATE proveedores SET nombre_empresa = $1, nombre_contacto = $2, correo = $3, numero_telefonico = $4, direccion = $5 WHERE id_proveedor = $6 RETURNING *",
-        [data.nombre_empresa, data.nombre_contacto, data.correo, data.numero_telefonico, data.direccion, id_proveedor]
+        [nombre_empresa, nombre_contacto, correo, numero_telefonico, direccion, id_proveedor]
     );
+     if (rows.length === 0){
+        return res.status(404).json({mensaje: "Proveedor no encontrado"})
+    } 
     return res.json(rows[0]);
 }

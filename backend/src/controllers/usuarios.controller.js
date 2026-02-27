@@ -55,5 +55,8 @@ export const updateUser = async (req, res) => {//usando los metodos de Router (r
         "UPDATE usuarios SET nombre_usuario = $1, correo = $2, numero_telefonico = $3, contraseña = $4, foto_url = $5 WHERE id_usuario = $6 RETURNING *",
         [data.nombre_usuario, data.correo, data.numero_telefonico, data.contraseña, data.foto_url, id_usuario]
     );
+     if (rows.length === 0){
+        return res.status(404).json({mensaje: "Usuario no encontrado"})
+    } 
     return res.json(rows[0]);
 }

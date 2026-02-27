@@ -2,6 +2,7 @@ import express from 'express';//import es una palabra reservada que se utiliza p
 import {PORT} from './src/config/config.js';//importando el puerto 
 import provRoutes from './src/routes/proveedores.routes.js';//importando los endpoints (rutas) de provedores
 import userRoutes from './src/routes/usuarios.routes.js';
+import produRoutes from './src/routes/productos.routes.js'
 import morgan from 'morgan';
 
 const app = express();//creacion de objeto app para usar metodos de express
@@ -9,6 +10,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(provRoutes);//utilizando el metodo use para utilizar los endpoints de proveedores
 app.use(userRoutes);
+app.use(produRoutes);
 app.listen(PORT);//utilizando el metodo listen para que el programa escuche el puerto asignado
 console.log('Servidor escuchando en el puerto', PORT)//Imprimir en consola
 
