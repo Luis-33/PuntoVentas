@@ -1,11 +1,11 @@
 import {pool} from "../config/db.js"
-
+//GET
 export const getProv = async(req, res) => {//usando los metodos de Router (request y response)
     const {rows} = await pool.query('SELECT * FROM proveedores');
     
     res.json(rows)
 }
-
+//GET:ID
 export const getProvByid = async (req, res) => {
     const {id_proveedor} = req.params;
     const {rows} = await pool.query('SELECT * FROM proveedores WHERE id_proveedor = $1', [id_proveedor]);
@@ -15,7 +15,7 @@ export const getProvByid = async (req, res) => {
     } 
     res.json(rows);
 }
-
+//DELETE
 export const deleteProv = async (req, res) => {
     const {id_proveedor} = req.params;
     const {rows, rowCount} = await pool.query('DELETE FROM proveedores WHERE id_proveedor = $1 RETURNING *', [id_proveedor]);
@@ -26,7 +26,7 @@ export const deleteProv = async (req, res) => {
     }
     return res.sendStatus(204)
 }
-
+//CREATE
 export const createProv = async (req, res) => {//usando los metodos de Router (request y response)
    try {
     const {nombre_empresa,nombre_contacto, correo,numero_telefonico,direccion} = req.body
@@ -46,7 +46,7 @@ export const createProv = async (req, res) => {//usando los metodos de Router (r
    }
 
 }
-
+//UPDATE
 export const updateProv = async (req, res) => {//usando los metodos de Router (request y response)
     const {id_proveedor} = req.params;
     const {nombre_empresa,nombre_contacto,correo,numero_telefonico,direccion} = req.body;
