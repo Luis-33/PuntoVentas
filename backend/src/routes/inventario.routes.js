@@ -1,13 +1,13 @@
 
 import { Router } from "express";
-import { createInvent, delteteInvent, getInvent, getInventById, updateInvent } from '../controllers/inventario.controller.js';
-
+import { registrarEntrada, obtenerStock, obtenerMovimientos,registrarAjuste} from '../controllers/inventario.controller.js';
+import { verifyToken } from "../middlewares/auth.middlewares.js";
 const router = Router();
 
-router.get('/inventario',getInvent);
-router.get('/inventario/:id_inventario',getInventById);
-router.put('/inventario',createInvent);
-router.delete('/inventario:id_inventario',delteteInvent);
-router.put('/inventario:id_inventario',updateInvent);
+router.post("/entrada", verifyToken, registrarEntrada);
+router.post("/ajuste", verifyToken, registrarAjuste);
+
+router.get("/stock/:id_producto", verifyToken, obtenerStock);
+router.get("/movimientos/:id_producto", verifyToken, obtenerMovimientos);
 
 export default router;

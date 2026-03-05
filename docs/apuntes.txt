@@ -15,6 +15,8 @@ instalar dependencias
 npm init -y // en caso de inicio de proyecto desde 0 
 npm install express pg dotenv cors morgan 
 npm install nodemon --save-dev
+npm install bcryptjs
+npm install jsonwebtoken
     EXPLICACION DEPENDENCIAS
 //npm init -y: para que configure el archivo package.json
 // instalacion de dependencias clave

@@ -7,7 +7,8 @@ export const pool = new pg.Pool({
     database: DB_DATABASE,
     port: DB_PORT
 });
-
+// console.log("USER:", DB_USER);
+// console.log("PASSWORD:", DB_PASSWORD);
 // pool.query('SELECT NOW()').then(result => {
 //     console.log(result);
 // });

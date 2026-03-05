@@ -5,14 +5,14 @@ const router = Router();//asignando una constante para utilizar Router
 //R-ead
 //U-pdate
 //D-elete
-router.get('/proveedores', getProv);
+router.get('/', getProv);
 //GET
-router.get('/proveedores/:id_proveedor', getProvByid);
+router.get('/:id_proveedor', getProvByid);
 //DELETE
-router.delete('/proveedores/:id_proveedor', deleteProv);
+router.delete('/:id_proveedor', deleteProv);
 //POST
-router.post('/proveedores', createProv);
+router.post('/', createProv);
 
-router.put('/proveedores/:id_proveedor', updateProv);
+router.put('/:id_proveedor', updateProv);
 
 export default router;//exportamos router como default
