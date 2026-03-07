@@ -1,13 +1,15 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
-// import App from './App.jsx'
-import Holamundo from './components/holamundo/holamundo.jsx'
-import Login from './components/login/login.jsx'
+import App from './App.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <App/> */}
-    <Login/>
+  <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+
   </StrictMode>,
 )

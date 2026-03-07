@@ -76,6 +76,7 @@ backend/
 COMANDO NODE
 npm.cmd run dev
 
+--------------FRONTEND-------------
 COMANDOS PARA INSTALAR REACT
 npm.cmd create vite
 Agregar nombre del proyecto
@@ -86,4 +87,36 @@ seguir los pasos que indica cmd
     cd "nombre de tu proyecto"
     npm install
     npm run dev
-    
+
+Instalaciones 
+
+npm install react-router-dom
+npm install axios
+
+
+Estructura de carpetas
+
+src
+│
+├── components
+│   ├── Navbar.jsx
+│   └── Sidebar.jsx
+│
+├── pages
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│   ├── Usuarios.jsx
+│   ├── Productos.jsx
+│   ├── Ventas.jsx
+│   └── Inventario.jsx
+│
+├── services
+│   └── api.js
+│
+├── context
+│   └── AuthContext.jsx
+│
+├── App.jsx
+└── main.jsx
+
+
